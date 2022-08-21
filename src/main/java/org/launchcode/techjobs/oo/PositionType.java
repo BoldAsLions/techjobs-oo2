@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.Objects;
+
 public class PositionType {
 
     private int id;
@@ -22,7 +24,9 @@ public class PositionType {
     //  their id fields match.
 
     // Getters and Setters:
-
+    public String toString() {
+        return value;
+    }
     public int getId() {
         return id;
     }
@@ -35,4 +39,8 @@ public class PositionType {
         this.value = value;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 }

@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import org.junit.Test;
+
 import java.util.Objects;
 
 public class Job {
@@ -87,7 +89,10 @@ public class Job {
         Job career = (Job) o;
         return getId() == career.getId();
     }
+    @Test
+    public void toString(){
 
+    }
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 }

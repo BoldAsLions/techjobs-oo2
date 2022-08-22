@@ -47,6 +47,15 @@ public class JobTest {
     public void testToStringStartAndEndsWithNewLine(){
         Job aJob =  new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
+        int numbers = aJob.toString().length();
+        char ch = aJob.toString().charAt(numbers-1);
+        System.out.println(ch);
+
+        char ch1 = aJob.toString().charAt(0);
+        System.out.println(ch1);
+
+        assertEquals(ch, "\n");
+        assertEquals(ch1, "\n");
 
     }
 }

@@ -42,6 +42,13 @@ public class JobTest {
         Job anotherJob =  new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse(aJob.equals(anotherJob));
     }
+
+    @Test
+    public void testToStringStartAndEndsWithNewLine(){
+        Job aJob =  new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+
+    }
 }
 
 

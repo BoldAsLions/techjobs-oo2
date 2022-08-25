@@ -38,28 +38,21 @@ public class JobTest {
 
     @Test
     public void testJobsForEquality() {
-        Job aJob =  new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job anotherJob =  new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job anotherJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse(aJob.equals(anotherJob));
     }
 
     @Test
-    public void testToStringStartAndEndsWithNewLine(){
-        Job aJob =  new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-
-        int numbers = aJob.toString().length();
-        char ch = aJob.toString().charAt(numbers-1);
-        System.out.println(ch);
-
+    public void testToStringStartAndEndsWithNewLine() {
+        Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         char ch1 = aJob.toString().charAt(0);
-        System.out.println(ch1);
+        assertEquals(ch1, '\n');
 
-        assertEquals(ch, "\n");
-        assertEquals(ch1, "\n");
-
+        char ch2 = aJob.toString().charAt(-1);
+        assertEquals(ch2, '\n');
     }
 }
-
 
 
 

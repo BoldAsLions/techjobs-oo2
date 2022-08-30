@@ -28,6 +28,7 @@ public class Job {
     }
 
     public int getId() {
+
         return id;
     }
 
@@ -51,8 +52,8 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
     public Job() {
-            id = nextId;
-            nextId++;
+        id = nextId;
+        nextId++;
     }
 
     public Employer getEmployer() {
@@ -69,11 +70,11 @@ public class Job {
 
     public Job(String name1, Employer employer1, Location location1, PositionType positionType1, CoreCompetency coreCompetency1) {
         this();
-         name = name1;
-         employer = employer1;
-         location = location1;
-         positionType = positionType1;
-         coreCompetency = coreCompetency1;
+        name = name1;
+        employer = employer1;
+        location = location1;
+        positionType = positionType1;
+        coreCompetency = coreCompetency1;
     }
 
 
@@ -93,4 +94,45 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+
+    @Override
+    public String toString() {
+
+        String output = "\n";
+        int nullCount = 0;
+
+        output += "ID: " + this.getId() + "\n";
+
+        if (this.name == null || this.name.equals("")) {
+            output += "Name: Data not available\n";
+            nullCount += 1;
+        } else {
+            output += "Name: " + this.name + "\n";
+        }
+
+        if (this.employer == null || this.employer.getValue().equals("")) {
+            output += "Employer: Data not available\n";
+            nullCount += 1;
+        } else {
+            output += "Employer: " + this.employer.getValue() + "\n";
+        }
+        if (this.location == null || this.location.getValue().equals("")) {
+            output += "Location: Data not available\n";
+        } else {
+            output += "Location: " + this.location.getValue() + "\n";
+        }
+
+        if (this.positionType == null || this.positionType.getValue().equals("")) {
+            output += "Position Type: Data not available\n";
+        } else {
+            output += "Position Type: " + this.positionType.getValue() + "\n";
+        }
+
+        if (this.coreCompetency == null || this.coreCompetency.getValue().equals("")) {
+            output += "Core Competency: Data not available\n";
+        } else {
+            output += "Core Competency: " + this.coreCompetency.getValue() + "\n";
+        }
+        return output;
+    }
 }
